@@ -2,7 +2,8 @@
 	session_start();
 	include("config.php");
 	include("model/model.php");
-	$controller=isset($_GET["controller"])?$_GET["controller"]:"";
+	$controller= isset($_GET["controller"])?$_GET["controller"]:"";
+
 	function checkController($controller) {
 		if($controller == "login" && isset($_SESSION["username"])==false) {
 			include("controller/frontend/controller_login.php");
