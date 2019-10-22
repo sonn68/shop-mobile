@@ -3,7 +3,7 @@
 		public $model;
 		public function __construct(){
 			$this->model=new model;
-			$arr=$this->model->get_all("select * from user order by id desc");
+			$arr=$this->model->get_all("select * from User order by id desc");
 			include("view/backend/view_product_user.php");
 		}
 	}

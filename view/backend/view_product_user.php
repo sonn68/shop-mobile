@@ -12,7 +12,7 @@
 					<?php foreach ($arr as $rows) {
 					?>
 					<tr>
-						<td class="text-center"><?php echo $rows->Username; ?></td>
+						<td class="text-center"><?php echo $rows->username; ?></td>
 						<td class="text-center">
 							<a href="admin.php?controller=add_user&act=delete&id=<?php echo $rows->Id;?>">Delete</a>
 						</td>
