@@ -9,7 +9,7 @@
                         <?php foreach ($arr_hot_discount as $row){
                              ?>
                         <div class="single-wid-product">
-                            <a href="single-product.html"><img src="public/image/<?php echo $row->id?>" alt="" class="product-thumb"></a>
+                            <a href="single-product.html"><img src="public/image/<?php echo $row->image?>" alt="" class="product-thumb"></a>
                             <h2><a href="single-product.html"><?php echo $row->name?></a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
@@ -33,7 +33,7 @@
                         <?php foreach ($arr_hot_product as $row){
                              ?>
                         <div class="single-wid-product">
-                            <a href="single-product.html"><img src="public/image/<?php echo $row->id?>" alt="" class="product-thumb"></a>
+                            <a href="single-product.html"><img src="public/image/<?php echo $row->image?>" alt="" class="product-thumb"></a>
                             <h2><a href="single-product.html"><?php echo $row->name?></a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
@@ -53,10 +53,10 @@
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Top New</h2>
                         <a href="#" class="wid-view-more">View All</a>
-                        <?php foreach ($arr_hot_product as $row){
+                        <?php foreach ($arr_new as $row){
                              ?>
                         <div class="single-wid-product">
-                            <a href="single-product.html"><img src="public/image/<?php echo $row->id?>" alt="" class="product-thumb"></a>
+                            <a href="single-product.html"><img src="public/image/<?php echo $row->image?>" alt="" class="product-thumb"></a>
                             <h2><a href="single-product.html"><?php echo $row->name?></a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
