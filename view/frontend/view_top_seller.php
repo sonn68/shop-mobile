@@ -12,7 +12,7 @@
                             <!-- -->
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="public/image/<?php echo $row->image?>" alt="">
+                                    <img src="public/image/image_in_DB/<?php echo $row->image?>" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                         <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
