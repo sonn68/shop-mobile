@@ -10,8 +10,7 @@
                             <img src="public/image/brand3.png" alt="samsung">
                             <img src="public/image/brand4.png" alt="apple">
                             <img src="public/image/brand5.png" alt="htc">
-                            <img src="public/image/brand6.png" alt="LG">
-                                                        
+                            <img src="public/image/brand6.png" alt="LG">                                                        
                         </div>
                     </div>
                 </div>
