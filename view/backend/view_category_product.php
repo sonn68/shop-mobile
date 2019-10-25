@@ -17,12 +17,13 @@
 					 ?>
 					<tr>
 						<td><?php echo $stt ?></td>
-						<td><?php echo $rows->c_name; ?></td>
-						<td><?php 
-							$check=$this->model->get_a_record("select * from group_product  where group_product_id=$rows->group_product_id");
-							echo $check->c_name;
-						 ?></td>
-						<td><a href="">delete</a>&nbsp;|&nbsp;<a href="">edit</a></td>
+						<td><?php echo $rows->name; ?></td>
+
+						<td><?php $check=$this->model->get_a_record("select * from group_product where id=$rows->id_group"); ?>
+						<?php echo $check->name; ?>
+						</td>
+
+						<td><a href="admin.php?controller=add_edit_category_product&act=delete&id=<?php echo $rows->id?>">delete</a>&nbsp;|&nbsp;<a href="admin.php?controller=add_edit_category_product&act=edit&id=<?php echo $rows->id?>">edit</a></td>
 					</tr>
 				<?php $stt++; ?>
 				<?php } ?>

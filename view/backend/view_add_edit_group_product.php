@@ -7,7 +7,7 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-3">Tên nhóm sản phẩm</div>
-							<div class="col-md-9"><input required type="text" class="form-control" name="c_name" value="<?php echo isset($arr->c_name)?$arr->c_name:""?>"></div>
+							<div class="col-md-9"><input required type="text" class="form-control" name="name" value="<?php echo isset($arr->name)?$arr->name:""?>"></div>
 						</div>
 					</div> 
 					<div class="form-group">

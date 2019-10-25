@@ -16,8 +16,8 @@
 					 ?>
 					<tr>
 						<td><?php echo $stt ?></td>
-						<td><?php echo $rows->c_name; ?></td>
-						<td><a href="">delete</a>&nbsp;|&nbsp;<a href="">edit</a></td>
+						<td><?php echo $rows->name; ?></td>
+						<td><a href="admin.php?controller=add_edit_group_product&act=delete&id=<?php echo $rows->id?>">delete</a>&nbsp;|&nbsp;<a href="admin.php?controller=add_edit_group_product&act=edit&id=<?php echo $rows->id?>">edit</a></td>
 					</tr>
 				<?php $stt++; ?>
 				<?php } ?>

@@ -22,21 +22,21 @@
 					?>
 					<tr>
 						<td><?php echo $i; ?></td>
-						<td><?php echo $rows->c_name ?></td>
-						<td><img style="width: 120px;" src="public/backend/images/<?php echo $rows->c_img;?>">
-							<div><a href="admin.php?controller=product_img&id=<?php echo $rows->product_id?>">Xem chi tiết hình ảnh</a></div>
+						<td><?php echo $rows->name ?></td>
+						<td><img style="width: 120px;" src="public/backend/images/<?php echo $rows->img;?>">
+							<div><a href="admin.php?controller=product_img&id=<?php echo $rows->id?>">Xem chi tiết hình ảnh</a></div>
 						</td>
 						<td>
-							<div><?php echo number_format($rows->c_pricenew); ?></div>
-							<del style="color:red"><?php echo number_format($rows->c_price); ?></del>
+							<div><?php echo number_format($rows->pricenew); ?></div>
+							<del style="color:red"><?php echo number_format($rows->price); ?></del>
 						</td>
 						<td><?php 
-							$check=$this->model->get_a_record("select * from category_product where category_product_id=$rows->category_product_id");
-						 ?><?php echo $check->c_name; ?></td>
-						<td><textarea style="height: 200px;"><?php echo $rows->c_content ?></textarea></td>
-						<td><?php echo $rows->c_hotnew ?></td>
+							$check=$this->model->get_a_record("select * from category_product where id_group=$rows->id_group");
+						 ?><?php echo $check->name; ?></td>
+						<td><textarea style="height: 200px;"><?php echo $rows->content ?></textarea></td>
+						<td><?php echo $rows->hot_product ?></td>
 						<td>
-							<a href="admin.php?controller=add_edit_product&act=delete&id=<?php echo $rows->product_id?>">Delete</a>&nbsp;&nbsp;<a href="admin.php?controller=add_edit_product&act=edit&id=<?php echo $rows->product_id?>">Edit</a>
+							<a href="admin.php?controller=add_edit_product&act=delete&id=<?php echo $rows->id?>">Delete</a>&nbsp;&nbsp;<a href="admin.php?controller=add_edit_product&act=edit&id=<?php echo $rows->id?>">Edit</a>
 						</td>
 					</tr>
 				<?php $i++; } ?>

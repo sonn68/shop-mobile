@@ -10,15 +10,15 @@
 				$form_action="admin.php?controller=add_user&act=do_add";
 				break;
 				case 'do_add':
-					$c_email=$_POST["c_email"];
-					$c_password=$_POST["c_password"];
-					$check=$this->model->get_num_rows("select * from user where Username='$c_email'");
+					$username=$_POST["username"];
+					$password=$_POST["password"];
+					$check=$this->model->get_num_rows("select * from user where username='$username'");
 					if($check==0){
-						$c_password=md5($c_password);
-							$this->model->execute("insert into user(Username,Password) values('$c_email','$c_password')");
+						$password=md5($password);
+							$this->model->execute("insert into user(username,password) values('$username','$password')");
 						// thực hiện thêm thông tin đó vào bảng information_user
-						$arr=$this->model->get_a_record("select * from user where Username='$c_email' ");
-						$this->model->execute("insert into infomation_user(user_id) values($arr->Id)");
+						$arr=$this->model->get_a_record("select * from user where username='$username' ");
+						$this->model->execute("insert into infomation_user(user_id) values($arr->id)");
 						header("location:admin.php?controller=product_user");
 					}
 					else{
@@ -27,7 +27,7 @@
 
 					break;
 				case 'delete':
-				$this->model->execute("delete from user where Id=$id");
+				$this->model->execute("delete from user where id=$id");
 				header("location:admin.php?controller=product_user");
 				break;
 			}
