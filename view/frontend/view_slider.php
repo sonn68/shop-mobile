@@ -4,7 +4,7 @@
                 <ul class="" id="bxslider-home4">
                     <?php foreach ($arr_slide as $row){ ?>
                     <li>
-                        <img style="height: 236px;width: 525px;" src="public/image/image_in_DB/<?php echo $row->image?>" alt="Slide">
+                        <img style="height: 236px;width: 743px;" src="public/image/image_in_DB/<?php echo $row->image?>" alt="Slide">
                         <div class="caption-group">
                             <h2 class="caption title" >
                                 <span class="primary"> <strong><?php echo $row->name?></strong></span>
