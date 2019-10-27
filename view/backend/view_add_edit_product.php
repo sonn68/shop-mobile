@@ -7,14 +7,14 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-3">Tên sản phẩm</div>
-							<div class="col-md-9"><input required type="text" class="form-control" name="c_name" value="<?php echo isset($arr->c_name)?$arr->c_name:""?>"></div>
+							<div class="col-md-9"><input required type="text" class="form-control" name="name" value="<?php echo isset($arr->name)?$arr->name:""?>"></div>
 						</div>
 					</div>
 					<!--  -->
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-3">Ảnh</div>
-							<div class="col-md-9"><input type="file" name="c_img"></div>
+							<div class="col-md-9"><input type="file" name="img"></div>
 						</div>
 					</div>
 					<!--  -->
@@ -22,11 +22,11 @@
 						<div class="row">
 							<div class="col-md-3">Danh mục sản phẩm</div>
 							<div class="col-md-9">
-								<select name="category_product_id">
+								<select name="id_category">
 									<?php $category=$this->model->get_all("select * from category_product");
 										foreach ($category as $rows) {
 									 ?>
-									<option <?php if(isset($arr->category_product_id)&&$arr->category_product_id==$rows->category_product_id){ ?> selected <?php } ?> value="<?php echo $rows->category_product_id?>"><?php echo $rows->c_name ?></option>
+									<option <?php if(isset($arr->id_category)&&$arr->id_category==$rows->id){ ?> selected <?php } ?> value="<?php echo $rows->id_category?>"><?php echo $rows->name ?></option>
 								<?php } ?>
 								</select>
 							</div>

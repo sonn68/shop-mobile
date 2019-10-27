@@ -31,7 +31,7 @@
 							<del style="color:red"><?php echo number_format($rows->price); ?></del>
 						</td>
 						<td><?php 
-							$check=$this->model->get_a_record("select * from category_product where id_group=$rows->id_group");
+							$check=$this->model->get_a_record("select * from category_product where id=$rows->id_category");
 						 ?><?php echo $check->name; ?></td>
 						<td><textarea style="height: 200px;"><?php echo $rows->content ?></textarea></td>
 						<td><?php echo $rows->hot_product ?></td>
