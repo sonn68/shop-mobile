@@ -18,7 +18,7 @@
 									<?php $group=$this->model->get_all("select * from group_product");
 										foreach ($group as $rows) {
 									 ?>
-									<option <?php if(isset($arr->id_group)&&$arr->id_group==$rows->id){ ?> selected <?php } ?> value="<?php echo $rows->id_group ?>"><?php echo $rows->name ?></option>
+									<option <?php if(isset($arr->id)&&$arr->id_group==$rows->id){ ?> selected <?php } ?> value="<?php echo $rows->id ?>"><?php echo $rows->name ?></option>
 								<?php } ?>
 								</select>
 							</div>

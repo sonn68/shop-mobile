@@ -36,14 +36,14 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-3">Giá</div>
-							<div class="col-md-9"><input required type="number" name="c_price" value="<?php echo isset($arr->c_price)?$arr->c_price:""?>"></div>
+							<div class="col-md-9"><input required type="number" name="price" value="<?php echo isset($arr->price)?$arr->price:""?>"></div>
 						</div>
 					</div>
 					<!--  -->
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-3">Giá mới</div>
-							<div class="col-md-9"><input required type="number" name="c_pricenew" value="<?php echo isset($arr->c_pricenew)?$arr->c_pricenew:""?>"></div>
+							<div class="col-md-9"><input required type="number" name="pricenew" value="<?php echo isset($arr->pricenew)?$arr->pricenew:""?>"></div>
 						</div>
 					</div>
 					<!--  -->
@@ -51,9 +51,9 @@
 						<div class="row">
 							<div class="col-md-3">Nội dung</div>
 							<div class="col-md-9">
-								<textarea name="c_content"><?php echo isset($arr->c_content)?$arr->c_content:"" ?></textarea>
+								<textarea name="content"><?php echo isset($arr->content)?$arr->content:"" ?></textarea>
 								<script  type="text/javascript">
-										CKEDITOR.replace("c_content");
+										CKEDITOR.replace("content");
 								</script>
 							</div>
 						</div>
@@ -61,8 +61,8 @@
 					<!--  -->
 					<div class="form-group">
 						<div class="row">
-							<div class="col-md-3">Hotnews</div>
-							<div class="col-md-9"><input type="checkbox" <?php if(isset($arr->c_hotnew)&&$arr->c_hotnew==1){ ?> checked <?php } ?> name="c_hotnew"></div>
+							<div class="col-md-3">Sản phẩm nổi bật</div>
+							<div class="col-md-9"><input type="checkbox" <?php if(isset($arr->hot_product)&&$arr->hot_product==1){ ?> checked <?php } ?> name="hot_product"></div>
 						</div>
 					</div>
 					<!--  -->

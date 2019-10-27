@@ -6,22 +6,26 @@
 				<div class="col-md-12">
 					<table class="table table-hover table-bordered">
 						<tr>
-							<th>Tên khách hàng</th>
-							<th>Email</th>
-							<th>Số điện thoại</th>
+							<th>STT</th>
+							<th>Tên người dùng</th>
+							<th>Sản phẩm phản hồi</th>
+							<th>Subject</th>
 							<th>Thời gian</th>
-							<th>Tiêu đề</th>
 							<th>Nội dung</th>
 						</tr>
 						<?php foreach ($arr as $rows) {
 						?>
 						<tr>
-							<td><?php echo $rows->c_name; ?></td>
-							<td><?php echo $rows->c_email;?></td>
-							<td><?php echo $rows->c_phone; ?></td>
-							<td><?php echo $rows->c_time;?></td>
-							<td><?php echo $rows->c_title; ?></td>
-							<td><textarea style="width: 200px;"><?php echo $rows->c_content; ?></textarea></td>
+							<td><?php echo $i; ?></td>
+							<td><?php 
+							$check=$this->model->get_a_record("select * from User where id=$rows->id_user");
+						 ?><?php echo $check->name; ?></td>
+							<td><?php 
+							$check=$this->model->get_a_record("select * from product where id=$rows->id_product");
+						 ?><?php echo $check->name; ?></td>
+						 	<td><?php echo $rows->subject;?></td>
+							<td><?php echo $rows->time;?></td>
+							<td><textarea style="width: 200px;"><?php echo $rows->content; ?></textarea></td>
 						</tr>
 					<?php } ?>
 					</table>
