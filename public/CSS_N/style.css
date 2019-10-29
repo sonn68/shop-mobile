@@ -145,13 +145,58 @@ z-index: 999;}
 
 
 .mainmenu-area ul.navbar-nav li a {
-    color: #6e6a6a;
+    color: #fff;
     font-size: 14px;
     padding: 20px;
+
+
 }
 
-.mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: #ee5057; color:#FFF;}
+.mainmenu-area ul.navbar-nav  li:hover a , .mainmenu-area ul.navbar-nav li.active  { background: #333; color:#FFF; border-top: 4px solid #ee5057;}
 .mainmenu-area .nav > li > a:focus {color: #FFF;}
+
+.mainmenu-area li.lever3:hover ul {
+  left: 0;
+}
+.mainmenu-area ul.navbar-nav ul {
+  background-color: #333;  
+  border: 0px;
+  top: 63px;
+  width: 160px;
+  position: absolute;
+  left: -10000px;
+  z-index: 200;
+}
+
+.mainmenu-area ul.navbar-nav ul.lever10 li {
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  left: -15px
+}
+.mainmenu-area ul.navbar-nav ul.lever10 li a {
+  border-top: none;
+  padding: 2px 2px ;
+  font-size: 12px;
+  width: 160px;
+  text-decoration: none;
+  position: relative;
+}
+
+.mainmenu-area ul.navbar-nav ul.lever10 li a span {
+  padding: 5px 0px 0px 5px;
+  line-height: 15px;
+  width: 160px;
+  white-space: nowrap;
+}
+.mainmenu-area ul.navbar-nav ul.lever10 li a:hover {
+  background-color: #ee5057 ;
+}
+
+.mainmenu-area ul.navbar-nav ul.lever10 li.last10:hover ul {
+  display: block;
+}
+
 
 .slider-area { width:80%; position:relative; margin:0 auto; padding:5px;}
 /*-------------------------

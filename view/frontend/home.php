@@ -20,18 +20,22 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="public/CSS_N/owl.carousel.css">
-    <link rel="stylesheet" href="public/backend/style.css">
+    <link rel="stylesheet" href="public/CSS_N/style.css">
     <link rel="stylesheet" href="public/CSS_N/responsive.css">
-
+    
     <script src="https://kit.fontawesome.com/42c80e2027.js" crossorigin="anonymous"></script>
 
   </head>
   <body>
    
    <?php include("controller/frontend/controller_header.php"); ?>
+
    <?php include("controller/frontend/controller_slider.php"); ?>
-   <?php include("controller/frontend/controller_brand.php"); ?>
+
    <?php include("controller/frontend/controller_top_seller.php"); ?>
+   
+<!--   <?php include("controller/frontend/controller_brand.php"); ?>  -->
+
 
     
     <div class="promo-area">

@@ -1,5 +1,5 @@
-<div class="header-area">
-        <div class="container">
+<div class="header-area" style=" margin-left: 5%; margin-right: 5%;">
+        <div class="container" >
             <div class="row">
                 <div class="col-md-8">
                     <div class="user-menu">
@@ -63,7 +63,7 @@
     
     <!-- begin mainmenu area --> 
     <div class="mainmenu-area">
-        <div class="container">
+        <div class="container" style=" width: 90%; background-color: #333 ">
             <div class="row">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -76,8 +76,18 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Shop page</a></li>
-                        <li><a href="single-product.html">Single product</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li class="lever3">
+                            <a href="product">Product</a>
+                            <ul class="lever10" style="list-style: none;">
+                                <?php foreach ($arr as $rows) { ?>
+                                <li class="last10">
+                                    <a href="index.php?controller=group_product&id=<?php echo $rows->id;?>"><span><?php echo $rows->name ?></span></a>
+                                </li>
+                                <?php } ?>
+                            </ul>
+
+                        </li>
                         <li><a href="cart.html">Cart</a></li>
                         <li><a href="checkout.html">Checkout</a></li>
                         <li><a href="#">Category</a></li>
