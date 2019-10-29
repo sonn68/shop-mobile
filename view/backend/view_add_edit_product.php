@@ -26,7 +26,7 @@
 									<?php $category=$this->model->get_all("select * from category_product");
 										foreach ($category as $rows) {
 									 ?>
-									<option <?php if(isset($arr->id_category)&&$arr->id_category==$rows->id){ ?> selected <?php } ?> value="<?php echo $rows->id_category?>"><?php echo $rows->name ?></option>
+									<option <?php if(isset($arr->id)&&$arr->id_category==$rows->id){ ?> selected <?php } ?> value="<?php echo $rows->id?>"><?php echo $rows->name ?></option>
 								<?php } ?>
 								</select>
 							</div>

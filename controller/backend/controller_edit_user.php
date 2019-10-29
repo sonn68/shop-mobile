@@ -7,43 +7,39 @@
 			$id=isset($_GET["id"])?$_GET["id"]:"";
 			switch ($act) {
 				case 'edit':
-					$arr=$this->model->get_a_record("select * from infomation_user where pk_infomation_id=$id");
+					$arr=$this->model->get_a_record("select * from User where id=$id");
 					$form_action="admin.php?controller=edit_user&act=do_edit&id=$id";
 					break;
 				case 'do_edit':
-				$c_name=$_POST["c_name"];
-				$c_adress=$_POST["c_adress"];
-				$c_sdt=$_POST["c_sdt"];
-				$c_email=$_POST["c_email"];
-				if(isset($arr->c_img)&&$arr->c_img!=""){
-				$c_img=$_FILES["c_img"]["name"];
-					if($c_img!=""){
-						$old_img=$this->model->get_a_record("select * from infomation_user where pk_infomation_id=$id");
-						unlink("public/backend/images/avt/".$old_img->c_img);
-						$tmp=$_FILES["c_img"]["tmp_name"];
-						$c_img=time().$c_img;
-						move_uploaded_file($tmp,"public/backend/images/avt/$c_img");
-						$this->model->execute("update infomation_user set c_img='$c_img' where pk_infomation_id=$id");
+				$name=$_POST["name"];
+				$address=$_POST["address"];
+				$phone=$_POST["phone"]; 
+				if(isset($arr->img)&&$arr->img!=""){
+				$img=$_FILES["img"]["name"];
+					if($img!=""){
+						$old_img=$this->model->get_a_record("select * from User where id=$id");
+						unlink("public/backend/images/avt/".$old_img->img);
+						$tmp=$_FILES["img"]["tmp_name"];
+						$img=time().$img;
+						move_uploaded_file($tmp,"public/backend/images/avt/$img");
+						$this->model->execute("update User set img='$img' where id=$id");
 						
 					}
 					}
 					else{
 
-						$c_img=$_FILES["c_img"]["name"];
-						if($c_img!=""){
-							$tmp=$_FILES["c_img"]["tmp_name"];
-							$c_img=time().$c_img;
-							move_uploaded_file($tmp,"public/backend/images/avt/$c_img");
-							$this->model->execute("update infomation_user set c_img='$c_img' where pk_infomation_id=$id");
+						$img=$_FILES["img"]["name"];
+						if($img!=""){
+							$tmp=$_FILES["img"]["tmp_name"];
+							$img=time().$img;
+							move_uploaded_file($tmp,"public/backend/images/avt/$img");
+							$this->model->execute("update User set img='$img' where id=$id");
 							
 					}
 					}
 				
-				$this->model->execute("update infomation_user set c_name='$c_name',c_adress='$c_adress',c_sdt='$c_sdt',c_email='$c_email' where pk_infomation_id=$id");
-
-				$tam=$_SESSION["c_email"];
-				echo "admin.php?controller=user&name='$tam'";
-				//echo "<script>header.location</script>"
+				$this->model->execute("update User set name='$name',address='$address',phone='$phone'  where id=$id"); 
+				 
 				header("location:admin.php?controller=user&name='$tam'");
 				break;
 

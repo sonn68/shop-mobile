@@ -32,6 +32,7 @@
 									    	<li class="nav-item"><a class="dropdown-item" href="admin.php?controller=category_product">Quản lí danh sách sản phẩm</a></li>
 											<li class="nav-item"><a class="dropdown-item" href="admin.php?controller=product">Quản lí sản phẩm</a></li>
 											<li class="nav-item"><a class="dropdown-item" href="admin.php?controller=news">Quản lí tin tức</a></li>
+											<li class="nav-item"><a class="dropdown-item" href="admin.php?controller=video">Quản lí video sản phẩm</a></li>
 									    </ul>
 									  </div>
 									</div>

@@ -10,48 +10,48 @@
 				$form_action="admin.php?controller=add_edit_news&act=do_add";
 				break;
 				case 'do_add':
-					$c_name=$_POST["c_name"];
-					$c_date=date('Y-m-d H:i');
-					$c_description=$_POST["c_description"];
-					$c_content=$_POST["c_content"];
-					$c_hotnews=isset($_POST["c_hotnews"])?1:0;
-					$category_news_id=$_POST["category_news_id"];
-					$c_img=time().$_FILES["c_img"]["name"];
-					if($c_img!=""){
-						$tmp=$_FILES["c_img"]["tmp_name"];
-						$c_img=time().$c_img;
-						move_uploaded_file($tmp,"public/news/$c_img");
+					$name=$_POST["name"];
+					$date=date('Y-m-d H:i');
+					$description=$_POST["description"];
+					$content=$_POST["content"];
+					$hotnew=isset($_POST["hotnew"])?1:0;
+					$id_category=$_POST["id_category"];
+					$img=time().$_FILES["img"]["name"];
+					if($img!=""){
+						$tmp=$_FILES["img"]["tmp_name"];
+						$img=time().$img;
+						move_uploaded_file($tmp,"public/news/$img");
 					}
-					$this->model->execute("insert into news(c_name,c_hotnews,c_img,c_content,category_news_id,c_date,c_description) values('$c_name','$c_hotnews','$c_img','$c_content','$category_news_id','$c_date','$c_description')");
+					$this->model->execute("insert into news(name,hotnew,img,content,id_category,date,description) values('$name','$hotnew','$img','$content','$id_category','$date','$description')");
 					
 					header("location:admin.php?controller=news");
 				break;
 				case 'delete':
-				$this->model->execute("delete from news where news_id=$id");
+				$this->model->execute("delete from news where id=$id");
 					header("location:admin.php?controller=news");
 				break;
 				case 'edit':
 				$form_action="admin.php?controller=add_edit_news&act=do_edit&id=$id";
-				$arr=$this->model->get_a_record("select * from news where news_id=$id");
+				$arr=$this->model->get_a_record("select * from news where id=$id");
 				break;
 				case 'do_edit':
-					$c_name=$_POST["c_name"];
-					$c_date=date('Y-m-d H:i');
-					$c_description=$_POST["c_description"];
-					$c_content=$_POST["c_content"];
-					$c_hotnews=isset($_POST["c_hotnews"])?1:0;
-					$category_news_id=$_POST["category_news_id"];
-					$this->model->execute("update news set c_name='$c_name',c_description='$c_description',c_content='$c_content',c_hotnews='$c_hotnews',category_news_id='$category_news_id',c_date='$c_date' where news_id=$id");
+					$name=$_POST["name"];
+					$date=date('Y-m-d H:i');
+					$description=$_POST["description"];
+					$content=$_POST["content"];
+					$hotnew=isset($_POST["hotnew"])?1:0;
+					$id_category=$_POST["id_category"];
+					$this->model->execute("update news set name='$name',description='$description',content='$content',hotnew='$hotnew',id_category='$id_category',date='$date' where id=$id");
 					//thực hiện cập nhật ảnh
-					$c_img=$_FILES["c_img"]["name"];
-					if($c_img!=""){
-						$old_img=$this->model->get_a_record("select * from news where news_id=$id");
-						unlink("public/news/".$old_img->c_img);
-						$tmp=$_FILES["c_img"]["tmp_name"];
-						$c_img=time().$c_img;
-						move_uploaded_file($tmp,"public/news/$c_img");
-						$this->model->execute("update news set c_img='$c_img' where news_id=$id");
-						echo "update news set c_img='$c_img' where news_id=$id";
+					$img=$_FILES["img"]["name"];
+					if($img!=""){
+						$old_img=$this->model->get_a_record("select * from news where id=$id");
+						unlink("public/news/".$old_img->img);
+						$tmp=$_FILES["img"]["tmp_name"];
+						$img=time().$img;
+						move_uploaded_file($tmp,"public/news/$img");
+						$this->model->execute("update news set img='$img' where id=$id");
+						echo "update news set img='$img' where id=$id";
 					}
 					header("location:admin.php?controller=news");
 				break;

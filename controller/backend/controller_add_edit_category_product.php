@@ -9,11 +9,11 @@
 				case 'add':
 				$form_action="admin.php?controller=add_edit_category_product&act=do_add";
 				break;
-				case 'do_add':
+				case 'do_add': 
+					
 					$name=$_POST["name"];
 					$id_group=$_POST["id_group"];
 					$this->model->execute("insert into category_product(name,id_group) values('$name','$id_group')");
-					
 					header("location:admin.php?controller=category_product");
 				break;
 				case 'delete':
