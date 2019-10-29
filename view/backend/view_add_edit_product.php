@@ -14,7 +14,7 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-3">Ảnh</div>
-							<div class="col-md-9"><input type="file" name="img"></div>
+							<div class="col-md-9"><input type="file" name="image"></div>
 						</div>
 					</div>
 					<!--  -->

@@ -18,7 +18,7 @@
 					<?php foreach ($arr as $rows) {
 					?>
 					<tr>
-						<td><img style="width: 120px;" src="public/news/<?php echo $rows->img?>"></td>
+						<td><img style="width: 120px;" src="public/news/<?php echo $rows->image?>"></td>
 						<td><?php echo $rows->name; ?></td>
 						<td><?php $check=$this->model->get_a_record("select * from category_news where id=$rows->id_category"); ?>
 						<?php echo $check->name; ?>

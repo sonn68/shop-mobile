@@ -16,13 +16,13 @@
 					$content=$_POST["content"];
 					$hotnew=isset($_POST["hotnew"])?1:0;
 					$id_category=$_POST["id_category"];
-					$img=time().$_FILES["img"]["name"];
-					if($img!=""){
-						$tmp=$_FILES["img"]["tmp_name"];
-						$img=time().$img;
-						move_uploaded_file($tmp,"public/news/$img");
+					$image=time().$_FILES["image"]["name"];
+					if($image!=""){
+						$tmp=$_FILES["image"]["tmp_name"];
+						$image=time().$image;
+						move_uploaded_file($tmp,"public/news/$image");
 					}
-					$this->model->execute("insert into news(name,hotnew,img,content,id_category,date,description) values('$name','$hotnew','$img','$content','$id_category','$date','$description')");
+					$this->model->execute("insert into news(name,hotnew,image,content,id_category,date,description) values('$name','$hotnew','$image','$content','$id_category','$date','$description')");
 					
 					header("location:admin.php?controller=news");
 				break;
@@ -43,15 +43,15 @@
 					$id_category=$_POST["id_category"];
 					$this->model->execute("update news set name='$name',description='$description',content='$content',hotnew='$hotnew',id_category='$id_category',date='$date' where id=$id");
 					//thực hiện cập nhật ảnh
-					$img=$_FILES["img"]["name"];
-					if($img!=""){
-						$old_img=$this->model->get_a_record("select * from news where id=$id");
-						unlink("public/news/".$old_img->img);
-						$tmp=$_FILES["img"]["tmp_name"];
-						$img=time().$img;
-						move_uploaded_file($tmp,"public/news/$img");
-						$this->model->execute("update news set img='$img' where id=$id");
-						echo "update news set img='$img' where id=$id";
+					$image=$_FILES["image"]["name"];
+					if($image!=""){
+						$old_image=$this->model->get_a_record("select * from news where id=$id");
+						unlink("public/news/".$old_image->image);
+						$tmp=$_FILES["image"]["tmp_name"];
+						$image=time().$image;
+						move_uploaded_file($tmp,"public/news/$image");
+						$this->model->execute("update news set image='$image' where id=$id");
+						echo "update news set image='$image' where id=$id";
 					}
 					header("location:admin.php?controller=news");
 				break;

@@ -14,7 +14,7 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-3">Ảnh</div>
-							<div class="col-md-9"><input type="file" name="img"></div>
+							<div class="col-md-9"><input type="file" name="image"></div>
 						</div>
 					</div>
 					<!--  -->
@@ -26,7 +26,7 @@
 									<?php $category=$this->model->get_all("select * from category_news");
 										foreach ($category as $row) {
 									 ?>
-									<option <?php if(isset($arr->id_category)&&$arr->id_category==$row->id){ ?> selected <?php } ?> value="<?php echo $row->id_category?>"><?php echo $row->name ?></option>
+									<option <?php if(isset($arr->id)&&$arr->id_category==$row->id){ ?> selected <?php } ?> value="<?php echo $row->id?>"><?php echo $row->name ?></option>
 								<?php } ?>
 								</select>
 							</div>

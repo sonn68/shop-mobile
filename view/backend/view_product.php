@@ -23,8 +23,9 @@
 					<tr>
 						<td><?php echo $i; ?></td>
 						<td><?php echo $rows->name ?></td>
-						<td><img style="width: 120px;" src="public/backend/images/<?php echo $rows->img;?>">
-							<div><a href="admin.php?controller=product_img&id=<?php echo $rows->id?>">Xem chi tiết hình ảnh</a></div>
+						<td><img style="width: 120px;" src="public/backend/images/<?php echo $rows->image;?>">
+							<div><a href="http://localhost/shop-mobile/public/backend/images/<?php echo $rows->image?>">Xem chi tiết hình ảnh</a></div>
+							
 						</td>
 						<td>
 							<div><?php echo number_format($rows->pricenew); ?></div>
@@ -32,7 +33,10 @@
 						</td>
 						<td><?php 
 							$check=$this->model->get_a_record("select * from category_product where id=$rows->id_category");
-						 ?><?php echo $check->name; ?></td>
+						 ?><?php 
+						 if($check != null) echo $check->name;
+						 else echo "null";
+						  ?></td>
 						<td><textarea style="height: 200px;"><?php echo $rows->content ?></textarea></td>
 						<td><?php echo $rows->hot_product ?></td>
 						<td>
