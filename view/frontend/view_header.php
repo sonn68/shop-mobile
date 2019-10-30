@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <div class="header-right">
                         <ul class="list-unstyled list-inline">
                             <li class="dropdown dropdown-small">
@@ -35,7 +35,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="logo">
-                        <h1><a href="./"><img src="" alt="shop-mobile"></a></h1>
+                        <h1><a href="">Shop Mobile</a></h1>
                     </div>
                 </div>
                 
