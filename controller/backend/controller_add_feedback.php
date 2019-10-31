@@ -10,24 +10,16 @@
 				// 	break;
 				case 'do_add':
 				date_default_timezone_set("Asia/Ho_Chi_Minh");
-				 
+				$username = $_POST["username"];
+				$id_product = $_POST["id_product"];
 				$subject=$_POST["subject"];
 				$content=$_POST["content"];
 				$time=date('Y-m-d H:i:s');
-				$c_maxacnhan=$_POST["c_maxacnhan"];
-				if(isset($c_maxacnhan)&&$c_maxacnhan==$_SESSION["c_code"]){
-					$this->model->execute("insert into contact( subject,content,time) values('$subject','$content','$time') ");
-					$tb="Bạn đã gửi phản hồi thành công.Chúng tôi sẽ sớm trả lời cho bạn!!";
-					include("view/backend/view_feedback.php");
-				}
-				else{
-					$tb="Sai mã xác nhận. Nhập lại";
-					include("view/backend/view_feedback.php");
-				}
+				 
+				$this->model->execute("insert into feedback(username,id_product, subject,content,time) values('$username', '$id_product', '$subject','$content','$time') ");
+				header("location:admin.php?controller=feedback");
 				break;
-
-				}
-			
+			}
 			include("view/backend/view_feedback.php");
 		}
 	}

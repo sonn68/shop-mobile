@@ -11,64 +11,63 @@
                                 <span>Xin chân thành cảm ơn!</span>
                             </div>
                             <div style="color: red"><?php echo isset($tb)?$tb:""; ?></div>
-                            <form method="post" action="index.php?controller=add_contact&act=do_add">
-                             
-                            <div class="clear">
+                            <form method="post" action="admin.php?controller=add_feedback">
+
+                            <div class="form-group">
                                 <div class="key">
-                                <span class="required">*</span>
-                                Địa chỉ
+                                <span class="required" style="color: red">*</span>
+                                Tên của bạn
                                 </div>
-                                <div class="value">
-                                <input id="txtContactAddress" class="NormalTextBox" type="text" maxlength="250" name="c_adress">
-                                <span id="cphMain_ctl00_ctl00_rfvContactAddress" style="display:none;">(*)</span>
+                                <div class="col-md-9">
+                                <input id="txtTitle" class="NormalTextBox" type="text" maxlength="255" name="username">
+                                <span id="cphMain_ctl00_ctl00_rfvUsername" style="display:none;">(*)</span>
                                 </div>
-                            </div>  
-                            <div class="clear">
+                            </div>
+
+                            <div class="form-group">
                                 <div class="key">
-                                <span class="required">*</span>
+                                <span class="required" style="color: red">*</span>
+                                Tên sản phẩm
+                                </div>
+                                <div class="col-md-9">
+                                <select name="id_product">
+                                    <?php $product=$this->model->get_all("select * from product");
+                                        foreach ($product as $rows) {
+                                     ?>
+                                    <option <?php if(isset($arr->id)&&$arr->id_product==$rows->id){ ?> selected <?php } ?> value="<?php echo $rows->id?>"><?php echo $rows->name ?></option>
+                                <?php } ?>
+                                </select>
+                            </div>
+                            </div>
+ 
+                            <div class="form-group">
+                                <div class="key">
+                                <span class="required" style="color: red">*</span>
                                 Tiêu đề
                                 </div>
-                                <div class="value">
+                                <div class="col-md-9">
                                 <input id="txtTitle" class="NormalTextBox" type="text" maxlength="255" name="subject">
-                                <span id="cphMain_ctl00_ctl00_rfvTitle" style="display:none;">(*)</span>
+                                <span id="cphMain_ctl00_ctl00_rfvSubject" style="display:none;">(*)</span>
                                 </div>
                             </div>
-                            <div class="clear">
+                            <div class="form-group">
                                 <div class="key">
-                                <span class="required">*</span>
+                                <span class="required" style="color: red">*</span>
                                 Nội dung
                                 </div>
-                                <div class="value">
-                                <textarea id="txtContent" class="NormalTextBox" style="height:80px;" cols="20" rows="2" name="content"></textarea>
+                                <div class="col-md-9">
+                                <textarea id="txtContent" class="NormalTextBox" style="height:80px;" cols="50" rows="2" name="content"></textarea>
                                 <span id="cphMain_ctl00_ctl00_rfvContactContent" style="display:none;">(*)</span>
                                 </div>
-                            </div>
-                            <!-- <div class="clear">
-                                <div class="key">
-                                <span class="required">*</span>
-                                Mã xác nhận
-                                </div>
-                                <div class="value">
-                                <div style="float: left; margin-bottom: 0px;">
-                                <input id="txtMangaunhien" class="NormalTextBox" type="text" style="width:70px;" maxlength="6" name="c_maxacnhan">
-                                </div> 
-                                <div style="float: left; margin: 0px 0px 0px 10px;">
-                                <a id="resetCapcha" href="#">
-                                <img alt="" style="height: 21px;" src="image/refesh7.png">
-                                </a>
-                                </div>
-                                <div style="clear: both;"></div>
-                                <span style="color: Red;"> </span>
-                                </div>
-                            </div> -->
-                            <div class="clear">
+                            </div> 
+                            <div class="form-group">
                                 <div class="key"> </div>
-                                <div class="value">
+                                <div class="col-md-9">
                                 <input id="btnSend" class="Button" type="submit" style="width:80px;"  value="Gửi" name="btnSend">
                                 <input id="btnReset" class="Button" type="submit" style="width:80px;" value="Nhập lại" name="btnReset">
                                 </div>
                             </div>
-                            <div class="clear"> </div>
+                           
                         </form>
                         </div>
                     </div>

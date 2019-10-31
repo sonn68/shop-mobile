@@ -34,9 +34,12 @@
 						<td><?php 
 							$check=$this->model->get_a_record("select * from category_product where id=$rows->id_category");
 						 ?><?php 
-						 if($check != null) echo $check->name;
-						 else echo "null";
-						  ?></td>
+						 if($check != null) {  echo $check->name;  }
+						 if($check == null) {   ?>
+						 	<?php $checkfake=$this->model->get_a_record("select * from category_product where id=71"); ?>
+						<?php echo $checkfake->name; ?> 
+						  <?php	} ?>
+						  </td>
 						<td><textarea style="height: 200px;"><?php echo $rows->content ?></textarea></td>
 						<td><?php echo $rows->hot_product ?></td>
 						<td>
