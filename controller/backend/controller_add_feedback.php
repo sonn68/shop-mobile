@@ -6,7 +6,7 @@
 			$act=isset($_GET["act"])?$_GET["act"]:"";
 			switch ($act) {
 				// case 'add':
-				// 	$form_action="index.php?controller=add_contact&act=do_add";
+				// 	$form_action="admin.php?controller=add_contact&act=do_add";
 				// 	break;
 				case 'do_add':
 				date_default_timezone_set("Asia/Ho_Chi_Minh");

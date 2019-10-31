@@ -11,7 +11,7 @@
                                 <span>Xin chân thành cảm ơn!</span>
                             </div>
                             <div style="color: red"><?php echo isset($tb)?$tb:""; ?></div>
-                            <form method="post" action="admin.php?controller=add_feedback">
+                            <form method="post" action="admin.php?controller=add_feedback&act=do_add">
 
                             <div class="form-group">
                                 <div class="key">

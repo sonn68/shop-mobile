@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-	<div class="col-md-6">
+	<div class="col-md-8">
 		<a class="btn btn-primary" style="margin: 5px 0px;" href="admin.php?controller=add_edit_video&act=add">Add</a>
 		<div class="card">
 			<div class="card-header bg-primary text-white">Danh sách group sản phẩm</div>
