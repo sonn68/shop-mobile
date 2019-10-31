@@ -9,8 +9,8 @@
                         <?php foreach ($arr_hot_discount as $row){
                              ?>
                         <div class="single-wid-product">
-                            <a href="index.php?controller=product_detail&id=<?php echo row->id?>"><img src="public/image/image_in_DB/<?php echo $row->image ?>" alt="<?php echo $row->image ?>" class="product-thumb"></a>
-                            <h2><a href="single-product.html"><?php echo $row->name?></a></h2>
+                            <a href="index.php?controller=product_detail&id=<?php echo $row->id?>"><img src="public/image/image_in_DB/<?php echo $row->image ?>" alt="<?php echo $row->image ?>" class="product-thumb"></a>
+                            <h2><a href="index.php?controller=product_detail&id=<?php echo $row->id?>"><?php echo $row->name?></a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -33,8 +33,8 @@
                         <?php foreach ($arr_hot_product as $row){
                              ?>
                         <div class="single-wid-product">
-                            <a href="single-product.html"><img src="public/image/image_in_DB/<?php echo $row->image?>" alt="<?php echo $row->image ?>" class="product-thumb"></a>
-                            <h2><a href="index.php?controller=product_detail&id=<?php echo row->id?>"><?php echo $row->name?></a></h2>
+                            <a href="index.php?controller=product_detail&id=<?php echo $row->id?>"><img src="public/image/image_in_DB/<?php echo $row->image?>" alt="<?php echo $row->image ?>" class="product-thumb"></a>
+                            <h2><a href="index.php?controller=product_detail&id=<?php echo $row->id?>"><?php echo $row->name?></a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -56,7 +56,7 @@
                         <?php foreach ($arr_new as $row){
                              ?>
                         <div class="single-wid-product">
-                            <a href="index.php?controller=product_detail&id=<?php echo row->id?>"><img src="public/image/image_in_DB/<?php echo $row->image?>" alt="<?php echo $row->image ?>" class="product-thumb"></a>
+                            <a href="index.php?controller=product_detail&id=<?php echo $row->id?>"><img src="public/image/image_in_DB/<?php echo $row->image?>" alt="<?php echo $row->image ?>" class="product-thumb"></a>
                             <h2><a href="single-product.html"><?php echo $row->name?></a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
