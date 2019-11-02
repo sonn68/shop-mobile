@@ -7,14 +7,18 @@
 				<table class="table table-bordered table-hover">
 					<tr>
 						<th class="text-center" style="width: 150px;">Tên tài khoản</th>
+						<th class="text-center" style="width: 150px;">Chức năng</th>
 						<th  style="width: 150px;"></th>
 					</tr>
 					<?php foreach ($arr as $rows) {
 					?>
 					<tr>
 						<td class="text-center"><?php echo $rows->username; ?></td>
+						<td class="text-center"><?php echo $rows->role; ?></td>
 						<td class="text-center">
-							<a href="admin.php?controller=add_user&act=delete&id=<?php echo $rows->id;?>">Delete</a>
+							<a href="admin.php?controller=edit_role&act=edit&id=<?php echo $rows->id;?>">Edit </a>|
+							<a href="admin.php?controller=add_user&act=delete&id=<?php echo $rows->id;?>"> Delete</a>
+
 						</td>
 					</tr>
 				<?php } ?>
