@@ -28,7 +28,7 @@
 
 									  <div  class="dropdown-menu " aria-labelledby="dropdownMenuLink">
 									    <ul class="nav navbar-nav mr-auto">
-									    	<li class="nav-item "><a class="dropdown-item " href="admin.php?controller=group_product">Quản lí group danh mục </a></li>
+									    	<li class="nav-item "><a class="dropdown-item " href="admin.php?controller=group_product">Quản lí group sản phẩm </a></li>
 									    	<li class="nav-item"><a class="dropdown-item" href="admin.php?controller=category_product">Quản lí danh sách sản phẩm</a></li>
 											<li class="nav-item"><a class="dropdown-item" href="admin.php?controller=product">Quản lí sản phẩm</a></li>
 											<li class="nav-item"><a class="dropdown-item" href="admin.php?controller=news">Quản lí tin tức</a></li>
