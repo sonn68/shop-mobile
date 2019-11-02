@@ -25,8 +25,8 @@
 							
 						</td>
 						<td><?php echo $rows->date ?></td>
-						<td><textarea style="height: 200px;"><?php echo $rows->description ?></textarea></td>
-						<td><textarea style="height: 200px;"><?php echo $rows->content ?></textarea></td>
+						<td><d style="height: 200px;"><?php echo $rows->description ?></d></td>
+						<td><d style="height: 200px;"><?php echo $rows->content ?></d></td>
 						<td><?php echo $rows->hotnew ?></td>
 						<td><a href="admin.php?controller=add_edit_news&act=delete&id=<?php echo $rows->id?>">Delete</a>&nbsp;&nbsp;<a href="admin.php?controller=add_edit_news&act=edit&id=<?php echo $rows->id?>"">Edit</a></td>
 					</tr>
