@@ -28,7 +28,7 @@
 						<div class="row">
 							<div class="col-md-3"></div>
 							<div class="col-md-9"><input type="submit" name="" value="Process" class="btn btn-primary">
-							<input type="submit" name="" value="Reset" class="btn btn-danger"></div>
+							<input type="reset" name="" value="Reset" class="btn btn-danger"></div>
 						</div>
 					</div>
 				</form>

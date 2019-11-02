@@ -64,7 +64,7 @@
                                 <div class="key"> </div>
                                 <div class="col-md-9">
                                 <input id="btnSend" class="Button" type="submit" style="width:80px;"  value="Gửi" name="btnSend">
-                                <input id="btnReset" class="Button" type="submit" style="width:80px;" value="Nhập lại" name="btnReset">
+                                <input id="btnReset" class="Button" type="reset" style="width:80px;" value="Nhập lại" name="btnReset">
                                 </div>
                             </div>
                            
