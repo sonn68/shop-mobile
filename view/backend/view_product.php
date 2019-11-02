@@ -40,7 +40,7 @@
 						<?php echo $checkfake->name; ?> 
 						  <?php	} ?>
 						  </td>
-						<td><textarea style="height: 200px;"><?php echo $rows->content ?></textarea></td>
+						<td><div style="height: 200px;"><?php echo $rows->content ?></div></td>
 						<td><?php echo $rows->hot_product ?></td>
 						<td>
 							<a href="admin.php?controller=add_edit_product&act=delete&id=<?php echo $rows->id?>">Delete</a>&nbsp;&nbsp;<a href="admin.php?controller=add_edit_product&act=edit&id=<?php echo $rows->id?>">Edit</a>
