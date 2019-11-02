@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="http://localhost/shop-mobile/">
     <title>SHOP MOBILE</title>
     
     <!-- Google Fonts -->
@@ -34,7 +35,7 @@
 
    <?php include("controller/frontend/controller_top_seller.php"); ?>
    
-<?php include("controller/frontend/controller_brand.php"); ?>  
+<!-- <?php include("controller/frontend/controller_brand.php"); ?>   -->
 
 
     

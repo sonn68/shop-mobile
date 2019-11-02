@@ -5,7 +5,7 @@
                     <?php foreach ($arr_slide as $row){ ?>
                     <li>
                         <div style="width:30%; height: 30%; margin-left: 7vw;">
-                            <img class="image-slider" src="public/image/image_in_DB/<?php echo $row->image?>" alt="Slide">
+                            <img class="image-slider" src="public/backend/images/<?php echo $row->image?>" alt="Slide">
                         </div>                
                         <div class="caption-group" >
                             <div style="width: 350px; height: 300px; left: 50%;  word-wrap: break-word;">

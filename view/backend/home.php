@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Master</title>
-	<link rel="stylesheet" type="text/css" href="public/backend/css/bootstrap.min.css">;
-	<base href="http://localhost/shop-mobile/">;
+	<link rel="stylesheet" type="text/css" href="public/backend/css/bootstrap.min.css">
+	<base href="http://localhost/shop-mobile/">
 	<script src="public/backend/js/jquery.min.js"></script>
 	<script  src="public/backend/js/bootstrap.min.js"></script>
 	<script src="public/backend/ckeditor/ckeditor.js"></script>
