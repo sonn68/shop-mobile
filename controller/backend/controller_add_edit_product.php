@@ -10,49 +10,75 @@
 				$form_action="admin.php?controller=add_edit_product&act=do_add";
 				break;
 				case 'do_add':
-					$c_name=$_POST["c_name"];
-					$c_price=$_POST["c_price"];
-					$c_pricenew=$_POST["c_pricenew"];
-					$c_content=$_POST["c_content"];
-					$c_hotnew=isset($_POST["c_hotnew"])?1:0;
-					$category_product_id=$_POST["category_product_id"];
-					$c_img=time().$_FILES["c_img"]["name"];
-					if($c_img!=""){
-						$tmp=$_FILES["c_img"]["tmp_name"];
-						$c_img=time().$c_img;
-						move_uploaded_file($tmp,"public/backend/images/$c_img");
+					$name=$_POST["name"];
+					$price=$_POST["price"];
+					$pricenew=$_POST["pricenew"];
+					$content=$_POST["content"];
+					$hot_product=isset($_POST["hot_product"])?1:0;
+					$id_category=$_POST["id_category"];
+					$image=time().$_FILES["image"]["name"];
+					if($image!=""){
+						$tmp=$_FILES["image"]["tmp_name"];
+						$image=time().$image;
+						move_uploaded_file($tmp,"public/backend/images/$image");
 					}
-					$this->model->execute("insert into product(c_name,c_price,c_pricenew,c_hotnew,c_img,c_content,category_product_id) values('$c_name','$c_price','$c_pricenew','$c_hotnew','$c_img','$c_content','$category_product_id')");
+					$this->model->execute("insert into product(name,price,pricenew,hot_product,image,content,id_category) values('$name','$price','$pricenew','$hot_product','$image','$content','$id_category')");
 					
 					header("location:admin.php?controller=product");
 				break;
 				case 'delete':
-				$this->model->execute("delete from product where product_id=$id");
+				$this->model->execute("delete from product where id=$id");
 					header("location:admin.php?controller=product");
 				break;
 				case 'edit':
 				$form_action="admin.php?controller=add_edit_product&act=do_edit&id=$id";
-				$arr=$this->model->get_a_record("select * from product where product_id=$id");
+				$arr=$this->model->get_a_record("select * from product where id=$id");
 				break;
 				case 'do_edit':
-					$c_name=$_POST["c_name"];
-					$c_price=$_POST["c_price"];
-					$c_pricenew=$_POST["c_pricenew"];
-					$c_content=$_POST["c_content"];
-					$c_hotnew=isset($_POST["c_hotnew"])?1:0;
-					$category_product_id=$_POST["category_product_id"];
-					$this->model->execute("update product set c_name='$c_name',c_price='$c_price',c_pricenew='$c_pricenew',c_content='$c_content',c_hotnew='$c_hotnew',category_product_id='$category_product_id' where product_id=$id");
+					$name=$_POST["name"];
+					$price=$_POST["price"];
+					$pricenew=$_POST["pricenew"];
+					$content=$_POST["content"];
+					$hot_product=isset($_POST["hot_product"])?1:0;
+					$id_category=$_POST["id_category"];
+					$this->model->execute("update product set name='$name',price='$price',pricenew='$pricenew',content='$content',hot_product='$hot_product',id_category='$id_category' where id=$id");
 					//thực hiện cập nhật ảnh
-					$c_img=$_FILES["c_img"]["name"];
-					if($c_img!=""){
-						$old_img=$this->model->get_a_record("select * from product where product_id=$id");
-						unlink("public/backend/images/".$old_img->c_img);
-						$tmp=$_FILES["c_img"]["tmp_name"];
-						$c_img=time().$c_img;
-						move_uploaded_file($tmp,"public/backend/images/$c_img");
-						$this->model->execute("update product set c_img='$c_img' where product_id=$id");
-						echo "update product set c_img='$c_img' where product_id=$id";
+					// $image=$_FILES["image"]["name"];
+					// if($image!=""){
+					// 	$old_image=$this->model->get_a_record("select * from product where id=$id");
+					// 	unlink("public/backend/images/".$old_image->image);
+					// 	$tmp=$_FILES["image"]["tmp_name"];
+					// 	$image=time().$image;
+					// 	move_uploaded_file($tmp,"public/backend/images/$image");
+					// 	$this->model->execute("update product set image='$image' where id=$id");
+					// 	echo "update product set image='$image' where id=$id";
+					// }
+					if(isset($arr->image)&&$arr->image!=""){
+					$image=$_FILES["image"]["name"];
+					if($image!=""){
+						$old_image=$this->model->get_a_record("select * from product where id=$id");
+						unlink("public/backend/images/".$old_image->image);
+						$tmp=$_FILES["image"]["tmp_name"];
+						$image=time().$image;
+						move_uploaded_file($tmp,"public/backend/images/$image");
+						$this->model->execute("update product set image='$image' where id=$id");
+						echo "update product set image='$image' where id=$id";
+						
 					}
+					}
+					else{
+
+						$image=$_FILES["image"]["name"];
+						if($image!=""){
+							$tmp=$_FILES["image"]["tmp_name"];
+							$image=time().$image;
+							move_uploaded_file($tmp,"public/backend/images/$image");
+							$this->model->execute("update product set image='$image' where id=$id");
+							echo "update product set image='$image' where id=$id";
+							
+					}
+					}
+				
 					header("location:admin.php?controller=product");
 				break;
 			}

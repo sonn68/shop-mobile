@@ -14,7 +14,7 @@
 					<tr>
 						<td class="text-center"><?php echo $rows->username; ?></td>
 						<td class="text-center">
-							<a href="admin.php?controller=add_user&act=delete&id=<?php echo $rows->Id;?>">Delete</a>
+							<a href="admin.php?controller=add_user&act=delete&id=<?php echo $rows->id;?>">Delete</a>
 						</td>
 					</tr>
 				<?php } ?>

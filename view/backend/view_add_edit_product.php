@@ -7,14 +7,14 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-3">Tên sản phẩm</div>
-							<div class="col-md-9"><input required type="text" class="form-control" name="c_name" value="<?php echo isset($arr->c_name)?$arr->c_name:""?>"></div>
+							<div class="col-md-9"><input required type="text" class="form-control" name="name" value="<?php echo isset($arr->name)?$arr->name:""?>"></div>
 						</div>
 					</div>
 					<!--  -->
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-3">Ảnh</div>
-							<div class="col-md-9"><input type="file" name="c_img"></div>
+							<div class="col-md-9"><input type="file" name="image"></div>
 						</div>
 					</div>
 					<!--  -->
@@ -22,11 +22,11 @@
 						<div class="row">
 							<div class="col-md-3">Danh mục sản phẩm</div>
 							<div class="col-md-9">
-								<select name="category_product_id">
+								<select name="id_category">
 									<?php $category=$this->model->get_all("select * from category_product");
 										foreach ($category as $rows) {
 									 ?>
-									<option <?php if(isset($arr->category_product_id)&&$arr->category_product_id==$rows->category_product_id){ ?> selected <?php } ?> value="<?php echo $rows->category_product_id?>"><?php echo $rows->c_name ?></option>
+									<option <?php if(isset($arr->id)&&$arr->id_category==$rows->id){ ?> selected <?php } ?> value="<?php echo $rows->id?>"><?php echo $rows->name ?></option>
 								<?php } ?>
 								</select>
 							</div>
@@ -36,14 +36,14 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-3">Giá</div>
-							<div class="col-md-9"><input required type="number" name="c_price" value="<?php echo isset($arr->c_price)?$arr->c_price:""?>"></div>
+							<div class="col-md-9"><input required type="number" name="price" value="<?php echo isset($arr->price)?$arr->price:""?>"></div>
 						</div>
 					</div>
 					<!--  -->
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-3">Giá mới</div>
-							<div class="col-md-9"><input required type="number" name="c_pricenew" value="<?php echo isset($arr->c_pricenew)?$arr->c_pricenew:""?>"></div>
+							<div class="col-md-9"><input required type="number" name="pricenew" value="<?php echo isset($arr->pricenew)?$arr->pricenew:""?>"></div>
 						</div>
 					</div>
 					<!--  -->
@@ -51,9 +51,9 @@
 						<div class="row">
 							<div class="col-md-3">Nội dung</div>
 							<div class="col-md-9">
-								<textarea name="c_content"><?php echo isset($arr->c_content)?$arr->c_content:"" ?></textarea>
+								<textarea name="content"><?php echo isset($arr->content)?$arr->content:"" ?></textarea>
 								<script  type="text/javascript">
-										CKEDITOR.replace("c_content");
+										CKEDITOR.replace("content");
 								</script>
 							</div>
 						</div>
@@ -61,8 +61,8 @@
 					<!--  -->
 					<div class="form-group">
 						<div class="row">
-							<div class="col-md-3">Hotnews</div>
-							<div class="col-md-9"><input type="checkbox" <?php if(isset($arr->c_hotnew)&&$arr->c_hotnew==1){ ?> checked <?php } ?> name="c_hotnew"></div>
+							<div class="col-md-3">Sản phẩm nổi bật</div>
+							<div class="col-md-9"><input type="checkbox" <?php if(isset($arr->hot_product)&&$arr->hot_product==1){ ?> checked <?php } ?> name="hot_product"></div>
 						</div>
 					</div>
 					<!--  -->

@@ -3,7 +3,7 @@
 <head>
 	<title>Master</title>
 	<link rel="stylesheet" type="text/css" href="public/backend/css/bootstrap.min.css">;
-	<base href="http://localhost/mobile-web/">;
+	<base href="http://localhost/shop-mobile/">;
 	<script src="public/backend/js/jquery.min.js"></script>
 	<script  src="public/backend/js/bootstrap.min.js"></script>
 	<script src="public/backend/ckeditor/ckeditor.js"></script>
@@ -32,6 +32,7 @@
 									    	<li class="nav-item"><a class="dropdown-item" href="admin.php?controller=category_product">Quản lí danh sách sản phẩm</a></li>
 											<li class="nav-item"><a class="dropdown-item" href="admin.php?controller=product">Quản lí sản phẩm</a></li>
 											<li class="nav-item"><a class="dropdown-item" href="admin.php?controller=news">Quản lí tin tức</a></li>
+											<li class="nav-item"><a class="dropdown-item" href="admin.php?controller=video">Quản lí video sản phẩm</a></li>
 									    </ul>
 									  </div>
 									</div>

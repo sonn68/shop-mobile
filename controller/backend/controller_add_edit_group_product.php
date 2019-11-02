@@ -10,22 +10,22 @@
 				$form_action="admin.php?controller=add_edit_group_product&act=do_add";
 				break;
 				case 'do_add':
-					$c_name=$_POST["c_name"];
-					$this->model->execute("insert into group_product(c_name) values('$c_name')");
+					$name=$_POST["name"];
+					$this->model->execute("insert into group_product(name) values('$name')");
 					
 					header("location:admin.php?controller=group_product");
 				break;
 				case 'delete':
-				$this->model->execute("delete from group_product where group_product_id=$id");
+				$this->model->execute("delete from group_product where id=$id");
 					header("location:admin.php?controller=group_product");
 				break;
 				case 'edit':
 				$form_action="admin.php?controller=add_edit_group_product&act=do_edit&id=$id";
-				$arr=$this->model->get_a_record("select * from group_product where group_product_id=$id");
+				$arr=$this->model->get_a_record("select * from group_product where id=$id");
 				break;
 				case 'do_edit':
-					$c_name=$_POST["c_name"];
-					$this->model->execute("update group_product set c_name='$c_name' where group_product_id=$id");
+					$name=$_POST["name"];
+					$this->model->execute("update group_product set name='$name' where id=$id");
 					header("location:admin.php?controller=group_product");
 				break;
 			}

@@ -3,9 +3,9 @@
 		public $model;
 		public function __construct(){
 			$this->model=new model();
-			$name=isset($_SESSION["c_email"])?$_SESSION["c_email"]:"";
-			$arr=$this->model->get_a_record("select * from user where Username='$name'");
-			$row=$this->model->get_a_record("select * from infomation_user where Id='$arr->Id'");
+			$name=isset($_SESSION["username"])?$_SESSION["username"]:"";
+			$arr=$this->model->get_a_record("select * from User where username='$name'");
+			$row=$this->model->get_a_record("select * from User where id='$arr->id'");
 			include("view/backend/view_user.php");
 		}
 	}

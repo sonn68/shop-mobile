@@ -7,14 +7,14 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-md-3">Tên tài khoản:</div>
-						<div class="col-md-9"><input type="text" class="form-control" name="c_email"></div>
+						<div class="col-md-9"><input type="text" class="form-control" name="username"></div>
 					</div>
 				</div>
 				<!--  -->
 				<div class="form-group">
 					<div class="row">
 						<div class="col-md-3">Mật khẩu:</div>
-						<div class="col-md-9"><input type="password" class="form-control" name="c_password"></div>
+						<div class="col-md-9"><input type="password" class="form-control" name="password"></div>
 					</div>
 				</div>
 				<div class="form-group">
