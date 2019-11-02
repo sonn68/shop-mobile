@@ -1,7 +1,5 @@
-<?php include ("view/frontend/view_brand.php"); ?>
 
-
-<!-- <?php
+<?php
 	class controller_brand {
 	 	public $model;
 		public function __construct(){
@@ -11,4 +9,4 @@
 		}
 	}
 	new controller_brand();	
-?> -->
+?>
