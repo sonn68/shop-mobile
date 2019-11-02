@@ -13,7 +13,7 @@
 				case 'do_edit':
 					$role=$_POST["role"];
 					$this->model->execute("update User set role='$role' where id=$id");
-					header("location:admin.php?controller=User");
+					header("location:admin.php?controller=product_user");
 				break;
 			}
 			include("view/backend/view_edit_role.php");
