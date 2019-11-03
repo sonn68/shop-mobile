@@ -72,9 +72,7 @@
                         </li>
                         <li><a href="index.php?controller=cart">Cart</a></li>
                         <li><a href="index.php?controller=bill">Checkout</a></li>
-                        <li><a href="#">Category</a></li>
-                        <li><a href="#">Others</a></li>
-                        <li><a href="#">Contact</a></li>
+                        
                     </ul>
                 </div>  
             </div>
