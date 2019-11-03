@@ -1,43 +1,5 @@
 <div class="header-area" style=" margin-left: 5%; margin-right: 5%;">
-        <div class="container" >
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="user-menu">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                            <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-                            <li><a href="admin.php"><i class="fa fa-user"></i> Login</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- <div class="col-md-4">
-                    <div class="header-right">
-                        <ul class="list-unstyled list-inline">
-                            <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">currency :</span><span class="value">USD </span><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">USD</a></li>
-                                    <li><a href="#">INR</a></li>
-                                    <li><a href="#">GBP</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">English</a></li>
-                                    <li><a href="#">French</a></li>
-                                    <li><a href="#">German</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
-            </div>
-        </div>
+ 
     </div>
     <!-- End header area -->
 
@@ -53,7 +15,27 @@
                 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="cart.html">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                        <a href="index.php?controller=cart">Cart - <span class="cart-amunt">
+                            <?php 
+                            if(isset($_SESSION["cart"])){
+                                $sum=0;
+                                foreach ($_SESSION["cart"] as $product) {
+                                    $sum += $product['price'] * $product['number'];
+                                }
+                                echo $sum;
+                            }else echo "0";
+                             ?>
+                        </span> <i class="fa fa-shopping-cart"></i> <span class="product-count">
+                        <?php 
+                        if(isset($_SESSION["cart"])){
+                            $number= 0;
+                            foreach ($_SESSION["cart"] as $product) {
+                                $number += $product['number'];
+                            }
+                            echo $number;
+                        }else echo "0";
+                            ?>
+                        </span></a>
                     </div>
                 </div>
             </div>
@@ -75,21 +57,21 @@
                 </div> 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
+                        <li class="active"><a href="">Home</a></li>
+                        <li><a href="index.php?controller=shop">Shop</a></li>
                         <li class="lever3">
-                            <a href="product">Product</a>
+                            <a href="index.php?controller=shop">Product</a>
                             <ul class="lever10" style="list-style: none;">
                                 <?php foreach ($arr as $rows) { ?>
                                 <li class="last10">
-                                    <a href="index.php?controller=group_product&id=<?php echo $rows->id;?>"><span><?php echo $rows->name ?></span></a>
+                                    <a href="index.php?controller=product_widget"><span><?php echo $rows->name ?></span></a>
                                 </li>
                                 <?php } ?>
                             </ul>
 
                         </li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a href="index.php?controller=cart">Cart</a></li>
+                        <li><a href="index.php?controller=bill">Checkout</a></li>
                         <li><a href="#">Category</a></li>
                         <li><a href="#">Others</a></li>
                         <li><a href="#">Contact</a></li>
