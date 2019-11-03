@@ -35,8 +35,6 @@
 
    <?php include("controller/frontend/controller_top_seller.php"); ?>
    
-
-    <?php include("controller/frontend/controller_news.php"); ?>
     
     <div class="promo-area">
         <div class="zigzag-bottom"></div>
@@ -75,6 +73,7 @@
     
     
     <?php include("controller/frontend/controller_product_widget.php"); ?>
+    <?php include("controller/frontend/controller_news.php"); ?>
     
     <?php include("controller/frontend/controller_footer.php"); ?>
     
