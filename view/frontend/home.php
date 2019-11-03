@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="public/CSS_N/owl.carousel.css">
     <link rel="stylesheet" href="public/CSS_N/style.css">
     <link rel="stylesheet" href="public/CSS_N/responsive.css">
-    
+    <base href="http://localhost/shop-mobile/">
     <script src="https://kit.fontawesome.com/42c80e2027.js" crossorigin="anonymous"></script>
 
   </head>
