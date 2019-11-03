@@ -5,7 +5,7 @@
                 <div class="col-md-4">
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Hot Discount</h2>
-                        <a href="" class="wid-view-more">View All</a>
+                        <a href="index.php?controller=shop" class="wid-view-more">View All</a>
                         <?php foreach ($arr_hot_discount as $row){
                              ?>
                         <div class="single-wid-product">
@@ -29,7 +29,7 @@
                 <div class="col-md-4">
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Hot Products</h2>
-                        <a href="#" class="wid-view-more">View All</a>
+                        <a href="index.php?controller=shop" class="wid-view-more">View All</a>
                         <?php foreach ($arr_hot_product as $row){
                              ?>
                         <div class="single-wid-product">
@@ -52,7 +52,7 @@
                 <div class="col-md-4">
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Top New</h2>
-                        <a href="#" class="wid-view-more">View All</a>
+                        <a href="index.php?controller=shop" class="wid-view-more">View All</a>
                         <?php foreach ($arr_new as $row){
                              ?>
                         <div class="single-wid-product">
