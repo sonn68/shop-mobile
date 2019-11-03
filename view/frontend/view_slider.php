@@ -13,7 +13,7 @@
                                 <span class="primary"> <strong><?php echo $row->name?></strong></span>
                             </h2>
                             <!-- <h4 class="caption subtitle">Dual SIM</h4> -->
-                            <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                            <a class="caption button-radius" href="index.php?controller=product_detail&id=<?php echo $row->id?>"><span class="icon"></span>Shop now</a>
                             </div>
                             
                         </div>
